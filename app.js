@@ -22,7 +22,7 @@ try {
 
   app.use(
     cors({
-      origin: ["http://localhost:3000","https://main--precious-tarsier-661a39.netlify.app"], 
+      origin: ["http://localhost:3000","https://main--precious-tarsier-661a39.netlify.app","*"], 
       credentials: true,
     })
   );
