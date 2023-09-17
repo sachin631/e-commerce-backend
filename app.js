@@ -15,26 +15,18 @@ const PORT = process.env.PORT || 27017;
 
 // app.use(cors())
 try {
-  app.use(
-    cors({
-      origin: "http://localhost:3000",
-
-      credentials: true,
-    })
-  );
+  // app.use(
+  //   cors({
+  //     origin: "http://localhost:3000",
+  //     credentials: true,
+  //   })
+  // );
   app.use(
     cors({
       origin: "https://main--precious-tarsier-661a39.netlify.app",
       credentials: true,
     })
   );
-
-  
-
-  // app.use((req, res, next) => {
-  //   res.header("Access-Control-Allow-Credentials", "true");
-  //   next();
-  // });   /// this resolve the problem of  cludnary data disapper
 
   app.use(express.json({ limit: "10mb" }));
 
