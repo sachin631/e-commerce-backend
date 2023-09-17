@@ -11,6 +11,7 @@ const productRouter = require("./router/productRouter");
 const fileUpload=require("express-fileupload");
 const userRouter = require("./router/userRouter");
 const orderRouter = require("./router/orderRouter");
+const PORT=process.env.PORT || 27017;
 
 
 
@@ -70,7 +71,7 @@ try {
     api_secret:process.env.api_secret
   })
    
-  app.listen(27017, () => {
+  app.listen(PORT, () => {
     console.log("working");
   });
 
