@@ -21,12 +21,33 @@ try {
   //     credentials: true,
   //   })
   // );
-  app.use(
-    cors({
-      origin: "https://main--precious-tarsier-661a39.netlify.app",
-      credentials: true,
-    })
-  );
+  // app.use(
+  //   cors({
+  //     origin: "https://main--precious-tarsier-661a39.netlify.app",
+  //     credentials: true,
+  //   })
+  // );
+
+  // Allow requests only from specific origins
+const allowedOrigins = [
+  "http://localhost:3000", // Add your local development origin if needed
+  "https://main--precious-tarsier-661a39.netlify.app",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Check if the request origin is in the list of allowed origins
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+  })
+);
+
 
   app.use(express.json({ limit: "10mb" }));
 
