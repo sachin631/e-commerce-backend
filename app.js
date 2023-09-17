@@ -29,16 +29,7 @@ try {
     })
   );
 
-  // Enable CORS for a specific origin
-  app.use((req, res, next) => {
-    res.header(
-      "Access-Control-Allow-Origin",
-      "https://main--precious-tarsier-661a39.netlify.app"
-    );
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    next();
-  });
+  
 
   // app.use((req, res, next) => {
   //   res.header("Access-Control-Allow-Credentials", "true");
