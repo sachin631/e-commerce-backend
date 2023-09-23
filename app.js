@@ -15,18 +15,25 @@ const PORT = process.env.PORT || 27017;
 
 // app.use(cors())
 try {
+  const corsOptions = {
+  origin: 'https://65070a2ea65d6c0007738a7a--precious-tarsier-661a39.netlify.app/',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+  
   // app.use(
   //   cors({
   //     origin: "http://localhost:3000",
   //     credentials: true,
   //   })
   // );
-  app.use(
-    cors({
-      origin: "https://main--precious-tarsier-661a39.netlify.app",
-      credentials: true,
-    })
-  );
+  // app.use(
+  //   cors({
+  //     origin: "https://main--precious-tarsier-661a39.netlify.app",
+  //     credentials: true,
+  //   })
+  // );
 
   // Allow requests only from specific origins
 // const allowedOrigins = [
