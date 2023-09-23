@@ -14,6 +14,12 @@ const orderRouter = require("./router/orderRouter");
 const PORT = process.env.PORT || 27017;
 
 // app.use(cors())
+ app.use(
+    cors({
+      origin: "https://main--precious-tarsier-661a39.netlify.app",
+      credentials: true,
+    })
+  );
 try {
   const corsOptions = {
   origin: 'https://65070a2ea65d6c0007738a7a--precious-tarsier-661a39.netlify.app/',
