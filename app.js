@@ -20,6 +20,9 @@ try {
   origin: 'https://65070a2ea65d6c0007738a7a--precious-tarsier-661a39.netlify.app',
   credentials: true, // Allow credentials (cookies, etc.)
 }));
+ // Handle preflight (OPTIONS) requests
+app.options('*', cors()); // Enable CORS for all OPTIONS requests
+ 
   app.use(express.json({ limit: "10mb" }));
 
   app.use("/uploads", express.static("./uploads"));
