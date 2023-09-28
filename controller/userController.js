@@ -63,8 +63,9 @@ exports.userLogin = async (req, res) => {
 
         //cookie generation
         res.cookie("fullStackCookie", token, {
-          expires: new Date(Date.now() + 90000000000),
+          expiresIn: "1d",
           httpOnly: false,
+          domain: "https://65070a2ea65d6c0007738a7a--precious-tarsier-661a39.netlify.app/"
         });
 
         res.status(200).json({ success: true, user: loginUser, token: token });
