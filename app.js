@@ -16,14 +16,14 @@ const PORT = process.env.PORT || 27017;
 
  
 try {
-  app.use(cors({
-  origin: 'https://ecommercefrontend-g82544n0z-sachin-sangwans-projects.vercel.app',
-  credentials: true, // Allow credentials (cookies, etc.)
-}));
-//  app.use(cors({
-//   origin: 'https://65070a2ea65d6c0007738a7a--precious-tarsier-661a39.netlify.app',
+//   app.use(cors({
+//   origin: 'https://ecommercefrontend-g82544n0z-sachin-sangwans-projects.vercel.app',
 //   credentials: true, // Allow credentials (cookies, etc.)
 // }));
+ app.use(cors({
+  origin: 'https://65070a2ea65d6c0007738a7a--precious-tarsier-661a39.netlify.app',
+  credentials: true, // Allow credentials (cookies, etc.)
+}));
  // Handle preflight (OPTIONS) requests
 app.options('*', cors()); // Enable CORS for all OPTIONS requests
  
